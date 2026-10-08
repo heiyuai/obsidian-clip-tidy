@@ -20,7 +20,7 @@ Clip Tidy is an independent community plugin, not affiliated with Obsidian. This
 
 ## Installation
 
-The plugin has not yet been submitted to the community directory. For now, use manual installation:
+The plugin has been submitted to the community directory and is awaiting automated review. Until it is available for installation in Obsidian, use manual installation:
 
 1. Download `main.js`, `manifest.json`, and `styles.css` from the [latest release](https://github.com/heiyuai/obsidian-clip-tidy/releases/latest).
 2. Create `.obsidian/plugins/clip-tidy/` inside your vault and place those three files in it.

@@ -20,7 +20,7 @@ Clip Tidy 是独立的社区插件，与 Obsidian 官方无关联。本仓库仅
 
 ## 安装
 
-插件尚未提交社区目录审核，目前请手动安装：
+插件已提交社区目录，正在等待自动审核。在 Obsidian 内开放安装前，请先手动安装：
 
 1. 从[最新版本](https://github.com/heiyuai/obsidian-clip-tidy/releases/latest)下载 `main.js`、`manifest.json` 和 `styles.css`。
 2. 在笔记库内创建 `.obsidian/plugins/clip-tidy/`，将这三个文件放进去。
