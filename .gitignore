@@ -1,0 +1,9 @@
+node_modules/
+main.js
+data.json
+.env
+.env.*
+.DS_Store
+coverage/
+*.log
+.obsidian/
