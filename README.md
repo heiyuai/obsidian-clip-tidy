@@ -1,5 +1,7 @@
 # Clip Tidy
 
+**English** | [简体中文](README.zh-CN.md)
+
 Organize clipped Markdown notes into existing folders with AI summaries, related-note links, review queues, and undo. Bring your own OpenAI-compatible model endpoint, including a local model.
 
 Clip Tidy is an independent community plugin, not affiliated with Obsidian. This repository contains the **Obsidian organizer only**. It does not require a companion browser extension: save notes with Obsidian Web Clipper or any other tool, then organize them here.
@@ -18,7 +20,7 @@ Clip Tidy is an independent community plugin, not affiliated with Obsidian. This
 
 ## Installation
 
-Community directory submission is in progress. Until the listing is approved, use manual installation:
+The plugin has not yet been submitted to the community directory. For now, use manual installation:
 
 1. Download `main.js`, `manifest.json`, and `styles.css` from the [latest release](https://github.com/heiyuai/obsidian-clip-tidy/releases/latest).
 2. Create `.obsidian/plugins/clip-tidy/` inside your vault and place those three files in it.
@@ -26,27 +28,29 @@ Community directory submission is in progress. Until the listing is approved, us
 
 Do not copy another person's `data.json`: it contains their settings, API key, and note backups.
 
-## Setup / 使用方法
+## Setup
 
-1. 在库内创建待整理目录，例如 `Clippings`，以及至少一个归档目录。
-2. 打开 **设置 → Clip Tidy**，填写待整理目录。插件默认值是 `待整理`，请改成实际的剪藏目录。
-3. 归档目录默认自动识别；可直接编辑列表，每行一个。点击刷新可恢复自动识别。
-4. 填写模型接口地址、模型名称和 API Key。支持 OpenAI Chat Completions 兼容接口：例如 `https://api.openai.com/v1`，或本机 `http://localhost:11434/v1`。本地模型无需认证时可留空密钥。
-5. 点击 **测试连接**。测试仅发送一句测试文本，不发送笔记。
-6. 阅读数据说明后开启 **启用 AI 整理**，点击 **立即整理**，或按需使用启动时整理、新收藏自动整理。
+The plugin currently has a Chinese interface. The steps below describe the controls in English; this document does not add an English interface to the plugin.
+
+1. Create an inbox folder such as `Clippings` and at least one destination folder inside your vault.
+2. Open **Settings → Clip Tidy** and set the first field, the inbox path, to your clipping folder. Replace the default Chinese folder name with your actual path.
+3. Destination folders are detected automatically. Edit the list with one folder per line, or use the refresh button to return to automatic detection.
+4. Enter your model endpoint, model name, and API key. OpenAI Chat Completions-compatible endpoints are supported, such as `https://api.openai.com/v1` or local `http://localhost:11434/v1`. Leave the key empty if your local service does not require authentication.
+5. Use the connection-test button below the API key field. It sends only a short test message, never a note.
+6. Read the data disclosure, enable AI organization, then use the organize-now button at the bottom. Optionally enable startup organization and watching for new clippings.
 
 The organizer is **disabled by default**. You must configure it and explicitly enable AI organization before notes are sent to your selected service. The plugin is free; a cloud model provider may require an account and charge for API usage. A local compatible model can be used without a cloud account.
 
-The automatic folder list excludes the inbox, its parents and descendants, hidden folders, and common attachment folders (`assets`, `attachments`, `images`, `附件`, `图片`). Manual destinations must already exist and cannot overlap the inbox.
+The automatic folder list excludes the inbox, its parents and descendants, hidden folders, and common attachment folders (such as `assets`, `attachments`, `images`, and their supported Chinese equivalents). Manual destinations must already exist and cannot overlap the inbox.
 
-## Review and undo / 查看记录与撤销
+## Review and undo
 
-Click the archive icon in the left ribbon, or run **Clip Tidy: 查看整理记录 / 撤销** from the command palette.
+Click the archive icon in the left ribbon to open the history view. Its four tabs, from left to right, are:
 
-- **已整理**：查看原目录和归档目录，打开文章、查看原文备份、撤销归档。
-- **未整理**：查看收件箱文章并单独整理；已撤销的文章会暂停自动处理。
-- **待确认**：展开摘要和理由，确认后归档；写入异常也会在这里提示检查。
-- **失败**：修复连接或配置后重新分析。
+- **Organized**: inspect the original and destination folders, open the note, view its original-text backup, or undo organization.
+- **Pending**: inspect inbox notes and organize them individually. Notes restored by undo stay paused until retried or changed.
+- **Needs review**: expand the summary and classification reason, then confirm the suggested move. Interrupted writes that need attention also appear here.
+- **Failed**: fix the connection or configuration, then request a new analysis.
 
 Undo refuses to overwrite a note edited since organization or a newly occupied original path. If moving a note causes Obsidian to rewrite relative links, the operation may need manual review; use the original-text backup to recover safely. History backups supplement, but do not replace, your vault backup.
 
