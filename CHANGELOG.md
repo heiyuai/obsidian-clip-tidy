@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2
+
+- Use the standard Obsidian settings heading component to resolve the community review error.
+- Provide separate English and Simplified Chinese documentation with language-switch links.
+
 ## 0.2.1
 
 First public release preparation.

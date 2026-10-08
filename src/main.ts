@@ -356,7 +356,7 @@ class TidySettings extends PluginSettingTab{
   constructor(app:App,private plugin:ClipTidy){super(app,plugin);}
   display(){
     const el=this.containerEl;el.empty();const p=this.plugin;const s=p.config;
-    el.createEl('h2',{text:'Clip Tidy · 收藏自动整理'});
+    new Setting(el).setName('收藏自动整理').setHeading();
     el.createEl('p',{text:'打开 Obsidian 后整理待整理目录。原文保留，AI 摘要附在文末；只归档到你允许的现有目录。'});
     el.createEl('p',{cls:'clip-tidy-muted',text:'启用后，新收藏全文、允许的目录名及最多 6 篇相关笔记各 1,200 字符会发送到你配置的模型服务。API Key 与原文备份保存在此插件的本地 data.json 中，请勿公开分享该文件。'});
     let refreshFolders=()=>{};
